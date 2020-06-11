@@ -10,6 +10,25 @@ mydb = mysql.connector.connect (
 mycursor = mydb.cursor()
 mycursor.execute('USE PY_demodb')
 
+
+#  ORDER BY
+
+mycursor.execute('SELECT * FROM employees ORDER BY salary DESC')
+
+res = mycursor.fetchall()
+
+print('********* RESULT for ORDER BY ************')
+
+for record in res:
+    print('Emp_ID: ', record[0])
+    print('First name: ', record[1])
+    print('Last name: ', record[2])
+    print('Email: ', record[3])
+    print('Job Title: ', record[4])
+    print('Date Hired: ', record[5])
+    print('Salary: ', record[6])
+    print('-----------------------------')
+
 # WHERE clause example
 
 mycursor.execute('SELECT * FROM employees WHERE emp_id <= 3')
@@ -27,6 +46,7 @@ for record in res1:
     print('Date Hired: ', record[5])
     print('Salary: ', record[6])
     print('-----------------------------')
+
 
 
 # LIKE with wildcards example
