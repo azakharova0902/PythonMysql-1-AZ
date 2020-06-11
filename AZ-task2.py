@@ -22,8 +22,7 @@ mycursor.executemany(my_query, my_values)
 mydb.commit()
 
 mycursor.execute('SELECT * FROM employees')
-for record in mycursor:
-    
+for record in mycursor:  
     print('Emp_ID: ', record[0])
     print('First name: ', record[1])
     print('Last name: ', record[2])
